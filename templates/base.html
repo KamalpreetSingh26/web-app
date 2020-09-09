@@ -1,0 +1,431 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+  <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
+
+
+
+  <title>{% block title %}
+    {% endblock title %}</title>
+
+
+  <style>
+    @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    html {
+      background-color: #eaf0f2;
+    }
+
+    body {
+      font: 16px/1.6 Arial, sans-serif;
+    }
+
+    header {
+      text-align: center;
+      padding-top: 100px;
+      margin-bottom: 190px;
+    }
+
+    header h1 {
+      font: normal 32px/1.5 'Open Sans', sans-serif;
+      color: #3F71AE;
+      padding-bottom: 16px;
+    }
+
+    header h2 {
+      color: #F05283;
+    }
+
+    header span {
+      color: #3F71EA;
+    }
+
+
+    /* The footer is fixed to the bottom of the page */
+
+    footer {
+      position: fixed;
+      bottom: 0;
+    }
+
+    @media (max-height:800px) {
+      footer {
+        position: static;
+      }
+
+      header {
+        padding-top: 40px;
+      }
+    }
+
+
+    .footer-distributed {
+      background-color: black;
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font: bold 16px sans-serif;
+      padding: 50px 50px 60px 50px;
+      margin-top: 80px;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    /* Footer left */
+
+    .footer-distributed .footer-left {
+      width: 30%;
+    }
+
+    .footer-distributed h3 {
+      color: #ffffff;
+      font: normal 36px 'Cookie', cursive;
+      margin: 0;
+    }
+
+    /* The company logo */
+
+    .footer-distributed .footer-left img {
+      width: 30%;
+    }
+
+    .footer-distributed h3 span {
+      color: chocolate;
+    }
+
+    /* Footer links */
+
+    .footer-distributed .footer-links {
+      color: #ffffff;
+      margin: 20px 0 12px;
+    }
+
+    .footer-distributed .footer-links a {
+      display: inline-block;
+      line-height: 1.8;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .footer-distributed .footer-company-name {
+      color: #8f9296;
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    /* Footer Center */
+
+    .footer-distributed .footer-center {
+      width: 35%;
+    }
+
+
+    .footer-distributed .footer-center i {
+      background-color: #33383b;
+      color: #ffffff;
+      font-size: 25px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 42px;
+      margin: 10px 15px;
+      vertical-align: middle;
+    }
+
+    .footer-distributed .footer-center i.fa-envelope {
+      font-size: 17px;
+      line-height: 38px;
+    }
+
+    .footer-distributed .footer-center p {
+      display: inline-block;
+      color: #ffffff;
+      vertical-align: middle;
+      margin: 0;
+    }
+
+    .footer-distributed .footer-center p span {
+      display: block;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .footer-distributed .footer-center p a {
+      color: #e0ac1c;
+      text-decoration: none;
+      ;
+    }
+
+
+    /* Footer Right */
+
+    .footer-distributed .footer-right {
+      width: 30%;
+    }
+
+    .footer-distributed .footer-company-about {
+      line-height: 20px;
+      color: #92999f;
+      font-size: 13px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .footer-distributed .footer-company-about span {
+      display: block;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .footer-distributed .footer-icons {
+      margin-top: 25px;
+    }
+
+    .footer-distributed .footer-icons a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      background-color: #33383b;
+      border-radius: 2px;
+
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+
+      margin-right: 3px;
+      margin-bottom: 5px;
+    }
+
+    /* Here is the code for Responsive Footer */
+    /* You can remove below code if you don't want Footer to be responsive */
+
+
+    @media (max-width: 880px) {
+
+      .footer-distributed .footer-left,
+      .footer-distributed .footer-center,
+      .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .footer-distributed .footer-center i {
+        margin-left: 0;
+      }
+
+    }
+  </style>
+  {% block head %}
+  {% endblock head %}
+</head>
+
+<body>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand  m-1 p-1" href="#"><span class="h3">PyCoder</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item ">
+          <a class="nav-link  h5 m-1" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link h5 m-1" href="/blog/">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link h5 m-1" href="/author">Authors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link h5 m-1" href="/about_us">About</a>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link h5 m-1" href="/contact">Contact us</a>
+        </li>
+        </li>
+
+
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0" method="get" action="/search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query"
+          id="query">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+
+
+
+      <button class="uk-button uk-button-danger uk-margin-small-right mx-2" type="button"
+        uk-toggle="target: #offcanvas-usage">Covid-19</button>
+      <div id="offcanvas-usage" uk-offcanvas>
+        <div class="uk-offcanvas-bar">
+
+          <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+          <h3>Covid-19</h3>
+
+          <p>Coronaviruses are large group of viruses that cause illness in humans and animals. Rarely, animal
+            coronaviruses can evolve and infect people and then spread between people such as has been seen with MERS
+            and SARS.</p>
+
+            <h3>Precautions</h3>
+            <ul>
+             <li> Wear a face cover</li>
+             <li> Wash your hands</li>
+              <li>Keep a safe distance</li>
+            </ul>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </nav>
+
+
+  <!--Message framewok-->
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>{{ message }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>{% endfor %}
+
+
+
+  {% block body %}
+  {% endblock body %}
+
+
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+      <img
+        src="data:image/jpeg;base64,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">
+      <h3>Py<span>CODERS</span></h3>
+
+      <p class="footer-links">
+        <a href="/blog">Blog</a>
+        |
+        <a href="/author">Authors</a>
+        |
+        <a href="/about_us">About</a>
+        |
+        <a href="/contact">Contact</a>
+      </p>
+
+      <p class="footer-company-name">© PyCODERS PVT.LTD</p>
+    </div>
+
+    <div class="footer-center">
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>Ward No,-17
+            Dehradun,
+            Uttarakhand
+        </p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>Contact Us</p>
+      </div>
+      <div>
+        <i class="fas fa-user"></i>
+        <p><a href="/author">Authors</a></p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>Follow us</span>
+
+      <div class="footer-icons">
+        <a href="https://discord.gg/7dJSScr"><i class="fab fa-discord fa-spin"></i></a>
+
+        <a href="#"><i class="fab fa-youtube fa-spin"></i></a>
+        <a href="#"><i class="fab fa-facebook fa-spin"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-spin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v8.0" nonce="HAUR9bwX"></script>
+  
+    {% block js %}
+    {% endblock js %}
+  
+
+</body>
+
+</html>

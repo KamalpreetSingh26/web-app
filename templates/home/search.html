@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}
+Search : {{query}}
+{% endblock title %}
+
+{% block js %}
+
+<script>
+let previews = document.getElementsByClassName('preview');
+Array.from(previews).forEach((element)=>{
+  element.innerHTML = element.innerText;
+})
+</script>
+{% endblock js %}
+
+{% block body %}
+<p class="container h1 my-4">Search Results:</p>
+        {% if allposts|length < 1 %}
+        <p class="text-secondary h4 container">No search results found<br><br>
+        Your search <strong class="text-primary">{{query}}</strong> did not match any documents<br><br>
+        Suggestions:<br>
+     
+        1.Try different keywords <br>
+        2.Check the spelling <br>
+        
+        <ul>
+        </p>
+        {% endif %}
+        {% for post in allposts %}
+
+  <div class="col-md-8 container my-1">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">{{post.author}}</strong>
+          <h3 class="mb-0 h3">{{post.title}}</h3>
+          <div class="mb-1 text-muted">{{post.date_posted}}</div>
+          <p class="card-text mb-auto"><div class="preview">{{post.content|safe | truncatechars:200}}</div></p>
+           </div>
+      <a href="/blog/{{post.slug}}" class="btn btn-primary my-2 " role="button">Continue reading</a>
+    </div>
+        </div>
+         </div>
+      
+      </div>
+    </div></div>
+    
+     <hr class="uk-divider-icon container">
+    {% endfor %}
+
+
+
+    
+    
+{% endblock body %}

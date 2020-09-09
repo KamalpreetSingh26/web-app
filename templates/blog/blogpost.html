@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+PyCoders || Blog
+{% endblock title %}
+{% block body %}
+
+
+<div class="container my-5">
+
+        <h2 class="blog-post-title h2">{{post.title}}</h2>
+        <p class="blog-post-meta h6">{{post.date_posted}}  <a href="/author" class="text-primary">{{post.author}}</a></p><div class="fb-like" data-href="http://121.0.0.1/blog/{{post.slug}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+
+        <p class="h6">{{post.content|safe}}</p>
+       <div class="my-4"><span class="text-danger h5"> </span> <a class="h5 text-warning" href="{{post.also_read_link}}">{{post.also_read}}</a></div>
+        
+      </div>
+
+
+
+
+{% endblock body %}

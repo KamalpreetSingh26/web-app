@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}
+PyCODERS || Blog
+{% endblock title %}
+
+{% block js %}
+
+<script>
+let previews = document.getElementsByClassName('preview');
+Array.from(previews).forEach((element)=>{
+  element.innerHTML = element.innerText;
+})
+</script>
+{% endblock js %}
+{% block body %}
+<div class=" my-3 mx-3">
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-secondary">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">Welcome to PyCoders Blog</h1>
+      <p class="lead my-3 text-dark">Here you can read about various topics such as technology,science,latest updates
+      and many more cool stuff.</p>
+      
+    </div>
+  </div></div>
+  <p class="container h1 my-4">Start Reading Blogs:</p>
+  
+        {% for post in allposts %}
+        
+  <div class="container my-1">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block  text-success my-0">{{post.author}}</strong>
+          <h3 class="mb-0 h3">{{post.title}}</h3>
+          <div class="mb-1 text-muted">{{post.date_posted}}</div>
+          <p class="card-text mb-auto"><div class="preview">{{post.content|safe | truncatechars:350}}</div></p>
+          
+        
+      </div>
+      <a href="/blog/{{post.slug}}" class="btn btn-primary my-2 " role="button">Continue reading</a>
+    </div>
+    
+    </div></div>
+    
+    <hr class="uk-divider-icon container">
+    
+    
+    {% endfor %}
+<div class="container">
+{% if prev %}
+<button class="btn btn-primary mx-3"><a href="/blog?page={{prev}}" class="text-light">&laquo Previous </a></button>
+{% else %}
+<button class="btn btn-primary mx-3"><a href="#" class="text-light">&laquo Previous </a></button>
+{% endif %}
+
+
+
+{% if nxt %}
+<button class="btn btn-primary float-right mx-3"><a href="/blog?page={{nxt}}" class="text-light">Next &raquo</a></button>
+{% else %}
+<button class="btn btn-primary float-right mx-3"><a href="#" class="text-light">Next &raquo</a></button>
+{% endif %}
+</div>
+    
+{% endblock body %}
